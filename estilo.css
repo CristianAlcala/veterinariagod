@@ -1,0 +1,209 @@
+*{
+    margin: 0px;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.content{
+    width: 1200;
+    margin: 0px auto;
+    padding: 20px 0;
+    height: 50px;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+header{
+    width: 100%;
+    background: #1f53c5;
+    height: 120px;
+}
+
+header img{
+    float: left;
+    height: 120px;
+    width: auto;
+    margin-left: 100px;
+    
+}
+
+nav{
+    float: right;
+}
+
+nav a{
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 20px;
+
+    transition: all ls;
+    
+}
+
+nav a:hover{
+    background: white;
+    color:#1f53c5
+}
+
+
+.half h1{
+    color: white;
+    background: #1f53c5;
+    border-radius: 10px;
+    margin-right: 400px;
+    padding: 10px 20px;
+}
+
+.half p{
+    color: white;
+    background: #1f53c5;
+    border-radius: 10px;
+    margin-right: 400px;
+    padding: 30px ;
+    margin-top: 20px;
+}
+
+.menu{
+    width: 750px;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.menu li{
+    float: left;
+    width: 200px;
+    height: 120px;
+    text-align: center;
+    background: #1f53c5;
+    color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    background: #1f53c5;
+    line-height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.form-registrar {
+width: 400px;
+background: #24303c;
+padding: 30px;
+margin: auto;
+margin-top: 100px;
+border-radius: 4px;
+font-family: 'calibri';
+color: white;
+box-shadow: 7px 13px 37px #000;
+}
+
+.form-registrar h4 {
+font-size: 22;
+margin-bottom:20px;
+}
+
+.controls {
+ width: 100%;
+ background: #24303c;
+ padding: 10px;
+ border-radius: 4px;
+ margin-bottom: 16px;
+ border: 1px solid #1f53c5;
+ font-size: 18px;
+ color: white;
+}
+
+.form-registrar .botons {
+width:100%;
+background: #1f53c5;
+border: none;
+padding: 11px;
+color: white;
+font-size: 15px;
+cursor: pointer;
+
+
+}
+
+.form-registrar2 {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 75px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    }
+
+.form-registrar2 .botons {
+    width:100%;
+    background: #1f53c5;
+    border: none;
+    padding: 11px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button.per{
+    width:100%;
+    background: #1f53c5;
+    border: none;
+    padding: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+body{
+    background-image: url(img/fondo2.jpg);
+    background-repeat: repeat;
+}
+
+.content2{
+    display: flex;   
+    justify-content: center;
+    align-items: center;  
+    height: 75vh;
+}
+
+.inicio {
+    width: 700px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    }
+    
+    .form-registrar section{
+        width: 400px;
+        background: #0069d3;
+        padding: 30px;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 4px;
+        font-family: 'calibri';
+        color: white;
+        box-shadow: 7px 13px 37px #000;
+        }
+
