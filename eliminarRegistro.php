@@ -10,16 +10,18 @@
 <body background="img/perromanoseado.jpg">
 
 <header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
+        <img src="img/logo.png" alt="Logo Veterinaria">    
+        
+
+        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
+
             <nav>
-                <a href="registrarCliente.html">Registrar Cliente</a>
-                <a href="index.html">Regresar a inicio</a>
+
+                <div>
+                    <a href="index.html">Regresar a inicio</a>
+                </div>
             </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
-        </div>
+
     </header>
 
 <?php
