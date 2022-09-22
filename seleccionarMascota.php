@@ -6,7 +6,7 @@
     <title>Actualizar Mascota</title>
 </head>
 
-<body background="img/perromanoseado.jpg">
+<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -40,15 +40,18 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
     <header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
+        <img src="img/logo.png" alt="Logo Veterinaria">    
+        
+
+        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
+
             <nav>
-                <a href="index.html">Regresar a inicio</a>
+
+                <div>
+                    <a href="index.html">Regresar a inicio</a>
+                </div>
             </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
-        </div>
+
     </header>
 
     <form action="actualizarMascota.php" method="POST">
@@ -66,7 +69,7 @@ mysqli_close($conn);
      
     <label for="FechaNacimiento">Fecha de Nacimiento</label>
 
-    <input class="controls" type="date" id="FechaNacimiento" name="FechaNacimiento" max="2021-12-31" value='<?php echo $nac; ?>'>
+    <input class="controls" type="date" id="FechaNacimiento" name="FechaNacimiento" value='<?php echo $nac; ?>'>
     <input class="controls" type='number' readonly hidden id='idmas' name='idmas' value='<?php echo $mas; ?>'><br><br>
 
      <input class="botons"   type="submit" value="Actualizar Mascota">
