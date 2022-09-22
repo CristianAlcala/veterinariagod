@@ -28,20 +28,20 @@
 </head>
 <body>
     
-    <header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
+<header>
+        <img src="img/logo.png" alt="Logo Veterinaria">    
+        
+
+        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
+
             <nav>
+
+                <div>
                 <a href="registrarCliente.html">Registrar Cliente</a>
                 <a href="index.html">Regresar Inicio</a>
-                
-                
-            
+                </div>
             </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
-        </div>
+
     </header>
 
 

@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>Citas Expiradas</title>
+    <title>Historial mascotas</title>
 </head>
 
-<body>
-<header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
-
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
+<body background="img/husky.jpg">
+    <header>
+        <div class="content">
+            <img src="img/patita.svg" alt="Logo Veterinaria">
+            
             <nav>
-
-                <div>
-                    <a href="index.html">Regresar a inicio</a>
-                </div>
+                <a href="index.html">Regresar a inicio</a>
             </nav>
-
+            <h1 style="text-align: center;">Veterinaria</h1>
+            <div class="clearfix"></div>
+        </div>
     </header>
 
     <?php 

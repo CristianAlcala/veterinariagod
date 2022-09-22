@@ -7,17 +7,21 @@
     <title>Registrar Mascota</title>
 </head>
 
-<body background="img/perromanoseado.jpg">
-    <header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
+<body>
+
+<header>
+        <img src="img/logo.png" alt="Logo Veterinaria">    
+        
+
+        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
+
             <nav>
-                <a href="mascotabuscar.php">Regresar</a>
+
+                <div>
+                    <a href="mascotabuscar.php">Regresar</a>
+                </div>
             </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
-        </div>
+
     </header>
 
     <form action="mascota.php" method="POST">
@@ -64,7 +68,7 @@
      
     <label for="FechaNacimiento">Fecha de Nacimiento</label>
 
-    <input class="controls" type="date" id="FechaNacimiento" name="FechaNacimiento" max="2021-12-31">
+    <input class="controls" type="date" id="FechaNacimiento" name="FechaNacimiento" >
 
      <input class="botons"   type="submit" value="Registrar Mascota"><br><br>
      <input class="botons"   type="reset" value="Limpiar datos">
