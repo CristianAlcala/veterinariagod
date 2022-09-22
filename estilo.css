@@ -22,7 +22,7 @@ header{
     width: 100%;
     background: #1f53c5;
     height: 150px;
-    border: solid black;
+    
     display: flex;
 
 }
@@ -30,12 +30,11 @@ header{
 header img{
     float: left;
     height: 100%;
-    border: solid black;
+    
     
 }
 
 nav{
-    border: solid black;
     padding-left: 10px;
     padding-right: 10px;
     line-height: 150px;
@@ -217,7 +216,7 @@ body{
 .titulo {
     line-height: 150px;
     float: left;
-    border: solid black;
+    
     margin-left: 5%;
     margin-right: auto;
 }
