@@ -21,23 +21,24 @@
 header{
     width: 100%;
     background: #1f53c5;
-    height: 150px;
-    
+    height: 100px;
+    border-bottom: 3px solid black;
     display: flex;
 
 }
 
 header img{
-    float: left;
     height: 100%;
-    
-    
+    border: solid black 1px;
 }
 
 nav{
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
-    line-height: 150px;
+    line-height: 50px;
+    border: solid black 1px;
+    background-color: #1f53c5;
     
 }
 
@@ -213,10 +214,23 @@ body{
         color: white;
         box-shadow: 7px 13px 37px #000;
         }
+
 .titulo {
-    line-height: 150px;
     float: left;
-    
-    margin-left: 5%;
-    margin-right: auto;
+    height: 100%;
+    line-height: 100px;
+    border: solid black 1px;
+text-align: center;
+
+}
+
+.divimagen{
+    width: 20%;
+    border: solid black 1px;
+}
+
+.divtitulo{
+    width: 90%;
+    border: solid black 1px;
+    line-height: 100px;
 }
