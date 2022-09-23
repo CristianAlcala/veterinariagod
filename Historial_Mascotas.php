@@ -8,55 +8,74 @@
 </head>
 
 <body background="img/husky.jpg">
-    <header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
-            <nav>
-                <a href="index.html">Regresar a inicio</a>
-            </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
+<header>
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
+
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
         </div>
     </header>
+
+
+    <nav>
+        <div class="barra">
+            <a href="registrarCliente.html">Registrar cliente</a>
+            <a href="mascotabuscar.php">Mascotas</a>
+            <a href="registrarCita.php">Registrar cita</a>
+            <a href="InformacionCitas.php">Citas</a>
+            <a href="Historial_Mascotas.php">Historial Mascotas (WIP)</a>
+        </div>     
+            <form method="POST" action="Historial_Mascotas.php">
+                <input type="text"
+                    placeholder="Nombre de la mascota"
+                    name="buscarm" id="buscarm">
+                <input type="submit" value="Buscar">
+            </form>
+
+    </nav>
 
     <?php 
     include "conexion.php";
     ?>
     <table class="controls" border="1" >
         <tr>
+            <td><b>NOMBRE MASCOTA</b></td>
+            <td><b>ESPECIE</b></td>
+            <td><b>RAZA</b></td>
+            <td><b>DESCRIPCION</b></td>
             <td><b>FECHA</b></td>
             <td><b>HORA</b></td>
-            <td><b>DESCRIPCIÓN</b></td>
-            <td><b>DUEÑO</b></td>
-            <td><b>MASCOTA</b></td>
-            <td><b>VETERINARIO</b></td>
-            <td><b>ESPECIALIDAD</b></td>
+            <td><b>CLAVE CITA</b></td>
 
         </tr>
 
         <?php
-            $consulta = "SELECT cita.FECHA, cita.HORA, cita.DESCRIPCION, mascota.NOMBRE as MASCOTA, usuario.NOMBRE as DUEÑO, veterinario.NOMBRE, veterinario.APELLIDO, veterinario.ESPECIALIDAD
-            FROM cita INNER JOIN mascota on cita.ID_MASCOTA = mascota.ID_MASCOTA
-            INNER JOIN usuario on cita.ID_USUARIO  = usuario.ID_USUARIO
-            INNER JOIN veterinario on cita.MATRICULA = veterinario.MATRICULA   
-            where  cita.FECHA < CURRENT_DATE
-            order by FECHA DESC LIMIT 25";
+           if(isset($_POST['buscarm'])){
+            $nm = $_POST['buscarm'];
+            
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.CLAVE_CITA
+             FROM cita INNER JOIN mascota ON cita.ID_MASCOTA = mascota.ID_MASCOTA WHERE mascota.NOMBRE LIKE '". $nm ."%'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array($consultar)){
         ?>
 
         <tr>
+            <td><?php echo $row['NOMBRE']?></td>
+            <td><?php echo $row['ESPECIE']?></td>
+            <td><?php echo $row['RAZA']?></td>
+            <td><?php echo $row['DESCRIPCION']?></td>
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
-            <td><?php echo $row['DESCRIPCION']?></td>
-            <td><?php echo $row['DUEÑO']?></td>
-            <td><?php echo $row['MASCOTA']?></td>
-            <td><?php echo $row['NOMBRE'].' '.$row['APELLIDO']?></td>
-            <td><?php echo $row['ESPECIALIDAD']?></td> 
+            <td><?php echo $row['CLAVE_CITA']?></td> 
         </tr>
         <?php
             }
+        }else{
+            echo "Indroduzca un nombre de mascota";
+        }
+    
         ?>        
     </table>
 

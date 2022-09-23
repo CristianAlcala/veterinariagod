@@ -22,14 +22,11 @@ header{
     width: 100%;
     background: #1f53c5;
     height: 100px;
-    border-bottom: 3px solid black;
     display: flex;
-
 }
 
 header img{
     height: 100%;
-    border: solid black 1px;
 }
 
 nav{
@@ -214,23 +211,12 @@ body{
         color: white;
         box-shadow: 7px 13px 37px #000;
         }
-
-.titulo {
-    float: left;
-    height: 100%;
-    line-height: 100px;
-    border: solid black 1px;
-text-align: center;
-
+.himagen{
+    width: 50%;
+    text-align: right;
 }
 
-.divimagen{
-    width: 20%;
-    border: solid black 1px;
-}
-
-.divtitulo{
-    width: 90%;
-    border: solid black 1px;
+.htitulo{
+    width: 50%;
     line-height: 100px;
 }
