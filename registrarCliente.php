@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["id"])){
+   header ("location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +23,7 @@
             <nav>
 
                 <div>
-                <a href="buscarRegistro.php">Eliminar Registro</a>
-                <a href="index.html">Regresar a inicio</a>
+                <a href="index.php">Regresar a inicio</a>
                 </div>
             </nav>
 

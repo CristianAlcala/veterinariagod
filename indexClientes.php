@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +20,13 @@
     </header>
 
     <nav>
-        <div>
-            <a href="registrarCliente.html">Registrar cliente</a>
+    <div>
+        
             <a href="mascotabuscar.php">Mascotas</a>
             <a href="registrarCita.php">Registrar cita</a>
-            <a href="InformacionCitas.php">Citas</a>
             <a href="Historial_Mascotas.php">Historial Mascotas (WIP)</a>
+            <a href="login.php">Loguearse (WIP)</a>
+
         </div>
     </nav>
 

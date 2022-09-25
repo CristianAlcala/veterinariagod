@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if (empty($_SESSION["id"])){
+   header ("location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +28,13 @@
 
     <nav>
         <div class="barra">
+            <a href="registrarCliente.php">Registrar cliente</a>
+            <a href="InformacionCitas.php">Citas</a>
+            <a href= "index.php">Regresar inicio</a>
            
-            <a href="mascotabuscar.php">Mascotas</a>
-            <a href="registrarCita.php">Registrar cita</a>
-            <a href= "indexClientes.php">Regresar inicio</a>
-           
-            
+            <a href="login.php">Deslogearse</a>
         </div>     
-            <form method="POST" action="Historial_Mascotas.php">
+            <form method="POST" action="Historial_MascotasVet.php">
                 <input type="text"
                     placeholder="Nombre de la mascota"
                     name="buscarm" id="buscarm">

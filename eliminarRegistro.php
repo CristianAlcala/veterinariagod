@@ -7,7 +7,7 @@
     <title>Eliminar Registro</title>
 </head>
 
-<body background="img/perromanoseado.jpg">
+<body>
 
 <header>
         <img src="img/logo.png" alt="Logo Veterinaria">    
@@ -18,7 +18,7 @@
             <nav>
 
                 <div>
-                    <a href="index.html">Regresar a inicio</a>
+                    <a href="index.php">Regresar a inicio</a>
                 </div>
             </nav>
 

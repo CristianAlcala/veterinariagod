@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Login</title>
+</head>
+
+<body>
+<header>
+        <img src="img/logo.png" alt="Logo Veterinaria">    
+        
+
+        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
+
+            <nav>
+
+                <div>
+                    <a href="indexClientes.php">Clientes</a>
+                </div>
+            </nav>
+
+    </header>
+
+    <form action="" method="POST">
+        <section class="form-registrar2">
+            <?php
+            include "modelo/conexionLogin.php";
+            include "controlador/controlador_login.php";
+            ?>
+           <br> Inicio de sesión <br>
+            <br> Usuario<input class="controls" type="text" id="lusuario" name="Nusuario" ><br>
+            <br>Contraseña<input class="controls" type="password" id="pass" name="Npassword"  ><br>
+
+            <input class="botons" type="submit" value="Ingresar" name='btningresar' >       
+        
+        </section>
+    </form>
+
+</body>
+
+</html>

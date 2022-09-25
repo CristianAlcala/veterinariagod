@@ -48,7 +48,7 @@ mysqli_close($conn);
             <nav>
 
                 <div>
-                    <a href="index.html">Regresar a inicio</a>
+                    <a href="indexClientes.php">Regresar a inicio</a>
                 </div>
             </nav>
 

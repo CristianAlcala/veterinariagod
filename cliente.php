@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+if (empty($_SESSION["id"])){
+   header ("location: login.php");
+}
+?>
 <html>
 
 <head>
@@ -14,7 +21,7 @@
             <img src="img/patita.svg" alt="Logo Veterinaria">
             
             <nav>
-                <a href="index.html">Regresar a inicio</a>
+                <a href="index.php">Regresar a inicio</a>
             </nav>
             <h1 style="text-align: center;">Veterinaria</h1>
             <div class="clearfix"></div>
