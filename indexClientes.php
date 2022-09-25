@@ -15,7 +15,7 @@
         </div>
 
         <div class="htitulo">
-            <h1>Veterinaria</h1>
+            <h1>Veterinaria</h1> 
         </div>
     </header>
 
@@ -35,7 +35,7 @@
         <img src="img/imagen.jpg" alt="" style="border: 10px;"><br>
         <br>
         <h1>Descripción</h1>
-        En esta veterinaria estamos comprometidos con tus mascotas, utiliza nuestro sistema para llevar control sobre tus citas, mascotas y clientes.
+        <p>En esta veterinaria estamos comprometidos con tus mascotas, utiliza nuestro sistema para llevar control sobre tus citas, mascotas y clientes.</p>
 
     </section>
 
