@@ -43,7 +43,7 @@ if (empty($_SESSION["id"])){
             <nav>
 
                 <div>
-                <a href="registrarClienteVet.php">Registrar Cliente</a>
+                <a href="registrarCliente.php">Registrar Cliente</a>
                 <a href="index.php">Regresar Inicio</a>
                 </div>
             </nav>
