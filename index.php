@@ -32,7 +32,7 @@ if (empty($_SESSION["id"])){
             <a href="registrarCliente.php">Registrar cliente</a>
             <a href="InformacionCitas.php">Citas</a>
             <a href="Historial_MascotasVet.php">Historial Mascotas (WIP)</a>
-            <a href="controlador/controlador_cerrar_session.php">Salir</a>
+            <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
 
         </div>
     </nav>

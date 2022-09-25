@@ -40,19 +40,20 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
     <header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
-            <nav>
-
-                <div>
-                    <a href="indexClientes.php">Regresar a inicio</a>
-                </div>
-            </nav>
-
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
+        </div>
     </header>
+
+    <nav>
+        <div>
+          <a href="indexClientes.php">Regresar a inicio</a>
+        </div>
+    </nav>
 
     <form action="actualizarMascota.php" method="POST">
     <section class="form-registrar">

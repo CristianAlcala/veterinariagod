@@ -8,20 +8,21 @@
 </head>
 
 <body>
-<header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
+    <header>
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
-            <nav>
-
-                <div>
-                    <a href="indexClientes.php">Clientes</a>
-                </div>
-            </nav>
-
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
+        </div>
     </header>
+
+    <nav>
+        <div>
+            <a href="indexClientes.php">Clientes</a>
+        </div>
+    </nav>
 
     <form action="" method="POST">
         <section class="form-registrar2">

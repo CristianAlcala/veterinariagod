@@ -33,28 +33,23 @@ if (empty($_SESSION["id"])){
     <title>Eliminar Registro</title>
 </head>
 <body>
-    
-<header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
+    <header>
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
-            <nav>
-
-                <div>
-                <a href="registrarCliente.php">Registrar Cliente</a>
-                <a href="index.php">Regresar Inicio</a>
-                </div>
-            </nav>
-
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
+        </div>
     </header>
 
+    <nav>
+        <div>
+            <a href="registrarCliente.php">Registrar Cliente</a>
+            <a href="index.php">Regresar Inicio</a>
+        </div>
+    </nav>
 
-
-    
-    
-    
     </section>
     <form action="eliminarRegistro.php" method="POST">
     <section class="form-registrar">

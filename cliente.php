@@ -14,19 +14,23 @@ if (empty($_SESSION["id"])){
     <title>Registrar Cliente</title>
 </head>
 
-<body background="img/perromanoseado.jpg">
+<body>
+    <header>
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-<header>
-        <div class="content">
-            <img src="img/patita.svg" alt="Logo Veterinaria">
-            
-            <nav>
-                <a href="index.php">Regresar a inicio</a>
-            </nav>
-            <h1 style="text-align: center;">Veterinaria</h1>
-            <div class="clearfix"></div>
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
         </div>
     </header>
+
+    <nav>
+        <div>
+          <a href="index.php">Regresar a inicio</a>
+        </div>
+    </nav>
+  
 
 
 <?php

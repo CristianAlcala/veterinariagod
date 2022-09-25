@@ -8,21 +8,22 @@
 </head>
 
 <body>
+    <header>
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-<header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
-
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
-            <nav>
-
-                <div>
-                    <a href="mascotabuscar.php">Regresar</a>
-                </div>
-            </nav>
-
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
+        </div>
     </header>
+
+    <nav>
+        <div>
+            <a href="mascotabuscar.php">Regresar</a>
+        </div>
+    </nav>
+
 
     <form action="mascota.php" method="POST">
     <section class="form-registrar">

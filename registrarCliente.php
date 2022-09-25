@@ -15,21 +15,21 @@ if (empty($_SESSION["id"])){
 
 <body>
     <header>
-        <img src="img/logo.png" alt="Logo Veterinaria">    
-        
+        <div class="himagen">
+            <img src="img/logo.png" alt="Logo Veterinaria">
+        </div>
 
-        <h1 class="titulo" style="text-align: center;">Veterinaria</h1>
-
-            <nav>
-
-                <div>
-                <a href="index.php">Regresar a inicio</a>
-                <a href="buscarRegistro.php">Eliminar Registro</a>
-
-                </div>
-            </nav>
-
+        <div class="htitulo">
+            <h1>Veterinaria</h1>
+        </div>
     </header>
+
+    <nav>
+        <div>
+            <a href="index.php">Regresar a inicio</a>
+            <a href="buscarRegistro.php">Eliminar Registro</a>
+        </div>
+    </nav>
 
 
     <form action="cliente.php" method="POST">

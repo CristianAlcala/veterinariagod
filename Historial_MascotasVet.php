@@ -31,8 +31,6 @@ if (empty($_SESSION["id"])){
             <a href="registrarCliente.php">Registrar cliente</a>
             <a href="InformacionCitas.php">Citas</a>
             <a href= "index.php">Regresar inicio</a>
-           
-            <a href="login.php">Deslogearse</a>
         </div>     
             <form method="POST" action="Historial_MascotasVet.php">
                 <input type="text"
@@ -40,7 +38,6 @@ if (empty($_SESSION["id"])){
                     name="buscarm" id="buscarm">
                 <input type="submit" value="Buscar">
             </form>
-
     </nav>
 
     <?php 
