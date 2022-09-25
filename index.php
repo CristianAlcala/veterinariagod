@@ -27,7 +27,7 @@ if (empty($_SESSION["id"])){
     <nav>
     <div>
         <?php 
-         echo $_SESSION["nombre"]. " ".$_SESSION["apellido"];
+         echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. " ".$_SESSION["apellido"]. "&nbsp;</p>";
          ?>
             <a href="registrarCliente.php">Registrar cliente</a>
             <a href="InformacionCitas.php">Citas</a>
