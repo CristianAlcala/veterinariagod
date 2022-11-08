@@ -26,8 +26,10 @@ if (empty($_SESSION["id"])){
 
     <nav>
         <div>
+            <a href="clienteBuscar.php">Modificar Cliente</a>
             <a href="index.php">Regresar a inicio</a>
             <a href="buscarRegistro.php">Eliminar Registro</a>
+
         </div>
     </nav>
 
