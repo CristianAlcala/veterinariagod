@@ -1,4 +1,8 @@
-
+<?php
+    include "modelo/conexionLogin.php";
+    include "controlador/controlador_login.php";
+    $idd =  $_SESSION["id"];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,8 +62,8 @@
            if(isset($_POST['buscarm'])){
             $nm = $_POST['buscarm'];
             
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.CLAVE_CITA
-             FROM cita INNER JOIN mascota ON cita.ID_MASCOTA = mascota.ID_MASCOTA WHERE mascota.NOMBRE LIKE '". $nm ."%'";
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
+            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE ID_USUARIO = 1 AND mascota.NOMBRE LIKE '". $nm ."%'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array($consultar)){
         ?>
@@ -75,8 +79,6 @@
         </tr>
         <?php
             }
-        }else{
-            echo "Indroduzca un nombre de mascota";
         }
     
         ?>        

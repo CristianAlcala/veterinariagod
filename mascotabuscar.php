@@ -1,5 +1,13 @@
+<?php
+    include "modelo/conexionLogin.php";
+    include "controlador/controlador_login.php";
+    $idd =  $_SESSION["id"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,11 +45,11 @@
         <h4>Actualizar Mascota </h4>
 
         <label for="mascota">Selecciona una mascota: </label>
-        <select class="controls" id="idMascota" name="idMascota"> 	
+        <select class="controls" id="ID_MASCOTA" name="ID_MASCOTA"> 	
             <?php
             include "conexion.php";
             
-            $consulta = 'SELECT ID_MASCOTA, NOMBRE from mascota';
+            $consulta = "SELECT ID_MASCOTA, NOMBRE from mascota where ID_DUEÑO = '$idd' ";
             $consultar = mysqli_query($conn, $consulta);
             
             while($row = mysqli_fetch_array($consultar))

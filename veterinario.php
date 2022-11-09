@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION["id"]) && $_SESSION["id"]!=0){
+   header ("location: login.php");
+} 
+?>
 <html>
 
 <head>
@@ -20,7 +26,7 @@
 
     <nav>
         <div>
-          <a href="login.php">Regresar a inicio</a>
+          <a href="IndexAdmin.php">Regresar a inicio</a>
         </div>
     </nav>
   
@@ -33,6 +39,7 @@ $password = "";
 $dbname = "vet_v3";
 
 $nom = $_POST['nombre'];
+$esp = $_POST['especialidad'];
 $cc = $_POST['correo'];
 $user = $_POST['usuario'];
 $pass =  $_POST['pass'];
@@ -46,7 +53,7 @@ if (!$conn) {
 }
 
 $sql = "INSERT INTO usuarios (NOMBRE, USUARIO, CLAVE, CORREO, TIPO, ROL, SUBROL)
-VALUES ('$nom', '$user', '$pass', '$cc', '2' ,'Cliente', 'Cliente')";
+VALUES ('$nom', '$user', '$pass', '$cc', '1' ,'Veterinario', '$esp')";
 
 echo "<section class='form-registrar'>";
 
@@ -59,7 +66,7 @@ if (mysqli_query($conn, $sql)) {
 echo "<br><b>Nombre del cliente: </b>" . $nom ."<br>";
 echo "<b>Correo del cliente: </b>". $cc ."<br>";
 echo "<br><b>Usuario del cliente: </b>" . $user ."<br>";
-echo "<br><b>Rol del cliente: </b>" . "Cliente" ."<br>";
+echo "<br><b>Rol Asignado: </b>" . "Veterinario - $esp" ."<br>";
 
 
 echo "</section>";

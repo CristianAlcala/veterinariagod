@@ -11,9 +11,9 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "veterinaria";
+$dbname = "vet_v3";
     
-$mas = $_POST['idMascota'];
+$mas = $_POST['ID_MASCOTA'];
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

@@ -1,3 +1,8 @@
+<?php
+    include "modelo/conexionLogin.php";
+    include "controlador/controlador_login.php";
+    $idd =  $_SESSION["id"];
+?>
 <html>
 
 <head>
@@ -28,13 +33,15 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "veterinaria";
+$dbname = "vet_v3";
 
 $mas = $_POST['mascota'];
 $fc = $_POST['fechaCita'];
 $hr = $_POST['horacita'];
 $desc = $_POST['desc'];
-$vet = $_POST['veterinario'];
+$idv = $_POST['ID_VETERINARIO'];
+
+echo $idv;
 
 
 // Create connection
@@ -44,8 +51,8 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO cita (FECHA, HORA, DESCRIPCION, ID_MASCOTA, MATRICULA, ID_USUARIO)
-VALUES ('$fc', '$hr', '$desc', '$mas', '$vet', (SELECT ID_USUARIO FROM mascota WHERE ID_MASCOTA=$mas))";
+$sql = "INSERT INTO cita (FECHA, HORA, DESCRIPCION, MASCOTA_ID_MASCOTA, MATRICULA, ID_USUARIO)
+VALUES ('$fc', '$hr', '$desc', '$mas', '$idv', '$idd')";
 
 echo "<section class='form-registrar'>";
 
@@ -55,7 +62,7 @@ if (mysqli_query($conn, $sql)) {
   echo "<h2>Error: </h2>" . $sql . "<br>" . mysqli_error($conn);
 }
 
-echo "<br><b>Veterinario: </b>" . $vet .  "<br>" .
+echo "<br><b>Veterinario: </b>" . $idv .  "<br>" .
 "<b>Mascota: </b>" .  $mas . "<br>" .
 "<b>Fecha de la cita: </b>" .  $fc . "<br>" .
 "<b>Hora de la cita: </b>" .  $hr . "<br>" .

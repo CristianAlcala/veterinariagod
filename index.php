@@ -2,7 +2,7 @@
 session_start();
 if (empty($_SESSION["id"])){
    header ("location: login.php");
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,15 +25,13 @@ if (empty($_SESSION["id"])){
     </header>
 
     <nav>
-    <div>
-        <?php 
-         echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. " ".$_SESSION["apellido"]. "&nbsp;</p>";
-         ?>
-            <a href="registrarCliente.php">Registrar cliente</a>
-            <a href="InformacionCitas.php">Citas</a>
-            <a href="Historial_MascotasVet.php">Historial Mascotas (WIP)</a>
-            <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
-
+        <div>
+            <?php 
+            echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. "&nbsp;</p>";
+            ?>
+                <a href="InformacionCitas.php">Citas</a>
+                <a href="Historial_MascotasVet.php">Historial Mascotas</a>
+                <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
         </div>
     </nav>
 

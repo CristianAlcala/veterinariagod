@@ -30,7 +30,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "veterinaria";
+$dbname = "vet_v3";
     
 $idmas = $_POST['idmas'];
 $nom = $_POST['nomMascota'];

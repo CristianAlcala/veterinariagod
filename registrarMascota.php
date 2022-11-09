@@ -27,28 +27,7 @@
 
     <form action="mascota.php" method="POST">
     <section class="form-registrar">
-        <h4>Registrar Mascota </h4>
-        <label for="usuario">Dueño de la mascota:</label>
-        <select class="controls" id="usuario" name="usuario"> 	
-
-            <?php
-            include "conexion.php";
-            
-            $consulta = 'SELECT ID_USUARIO, NOMBRE from usuario';
-            $consultar = mysqli_query($conn, $consulta);
-            
-            while($row = mysqli_fetch_array($consultar))
-            {
-                $id= $row['ID_USUARIO'];
-                $nom=$row['NOMBRE'];
-            ?>  
-            <option value="<?php echo $id; ?>"><?php echo $nom; ?></option>  
-                <?php           
-            }
-            ?>
-
-        </select>
-        
+        <h4>Registrar Mascota </h4>  
         
         <input class="controls" type="text" name="nomMascota" id="nomMascota" placeholder="Escribe el nombre de la Mascota" required> 
         <input class="controls" type="text" name="raza" id="raza" placeholder="Escribe la Raza" required>

@@ -27,12 +27,12 @@ if (empty($_SESSION["id"])){
 
     <nav>
         <div>
-          <a href="index.php">Regresar Inicio</a>
+          <a href="indexAdmin.php">Regresar Inicio</a>
         </div>
     </nav>
 <?php
 include "conexion.php";
-$matricu=$_POST["idUsuario"];
+$matricu=$_POST["seleccion"];
 
 
 // Create connection
@@ -42,7 +42,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql ="DELETE from usuario  WHERE ID_USUARIO ='$matricu'";
+$sql ="DELETE from usuarios  WHERE ID_USUARIOS ='$matricu'";
 
 echo "<section class='form-registrar' style='width: 600px;'>";
 if (mysqli_query($conn, $sql)) {
@@ -57,8 +57,6 @@ if (mysqli_query($conn, $sql)) {
 mysqli_close($conn);
 ?>
 <img src="img/palomita.png" alt="Palomita" width="30" height="30" >
-
-
 
 </body>
 

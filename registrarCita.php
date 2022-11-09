@@ -1,3 +1,8 @@
+<?php
+    include "modelo/conexionLogin.php";
+    include "controlador/controlador_login.php";
+    $idd =  $_SESSION["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,25 +33,27 @@
         <section class="form-registrar2">
             <h4>Registrar Cita </h4>     
 
-            <label for="veterinario">Selecciona un veterinario: </label>
-            <select class="controls" id="veterinario" name="veterinario" required>
-
+            <label for="ID_VETERINARIO">Selecciona un veterinario: </label>
+            <select class="controls" id="ID_VETERINARIO" name="ID_VETERINARIO" required>
+            <option disabled selected>Selecciona una opción</option>
                 <?php
                     include "conexion.php";
                     
-                    $consulta = 'SELECT MATRICULA, ESPECIALIDAD, NOMBRE from veterinario';
+                    $consulta = 'SELECT ROL, SUBROL, NOMBRE from USUARIOS WHERE TIPO = 1';
                     $consultar = mysqli_query($conn, $consulta);
+                    
                     
                     while($row = mysqli_fetch_array($consultar))
                     {
-                        $mat= $row['MATRICULA'];
-                        $esp=$row['ESPECIALIDAD'];
+                        $mat= $row['ID_USUARIO'];
+                        $esp=$row['SUBROL'];
                         $nom=$row['NOMBRE'];
                     ?> 
-
+                
                 <option value="<?php echo $mat; ?>"><?php echo $nom." - ".$esp; ?></option>  
                 <?php           
                 }
+                
                 ?>
 
             </select>
@@ -56,7 +63,7 @@
             <?php
             include "conexion.php";
             
-            $consulta = 'SELECT ID_MASCOTA, NOMBRE from mascota';
+            $consulta = "SELECT ID_MASCOTA, NOMBRE from mascota where ID_DUEÑO = '$idd' ";
             $consultar = mysqli_query($conn, $consulta);
             
             while($row = mysqli_fetch_array($consultar))
@@ -64,6 +71,7 @@
                 $mat= $row['ID_MASCOTA'];
                 $nom=$row['NOMBRE'];
             ?>  
+            
             <option value="<?php echo $mat; ?>"><?php echo $nom; ?></option>  
                 <?php           
             }

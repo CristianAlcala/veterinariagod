@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "veterinaria";
+$dbname = "vet_v3";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 ?>

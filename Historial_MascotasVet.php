@@ -28,9 +28,10 @@ if (empty($_SESSION["id"])){
 
     <nav>
         <div class="barra">
-            <a href="registrarCliente.php">Registrar cliente</a>
-            <a href="InformacionCitas.php">Citas</a>
-            <a href= "index.php">Regresar inicio</a>
+
+                <a href="registrarCliente.php">Registrar cliente</a>
+                <a href="InformacionCitas.php">Citas</a>
+                <a href= "index.php">Regresar inicio</a>
         </div>     
             <form method="POST" action="Historial_MascotasVet.php">
                 <input type="text"
@@ -76,8 +77,6 @@ if (empty($_SESSION["id"])){
         </tr>
         <?php
             }
-        }else{
-            echo "Indroduzca un nombre de mascota";
         }
     
         ?>        

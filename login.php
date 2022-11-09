@@ -20,7 +20,7 @@
 
     <nav>
         <div>
-            <a href="indexClientes.php">Clientes</a>
+            <a href="registrarCliente.php">Registrarse</a>  
         </div>
     </nav>
 
@@ -34,7 +34,9 @@
             <br> Usuario<input class="controls" type="text" id="lusuario" name="Nusuario" ><br>
             <br>Contraseña<input class="controls" type="password" id="pass" name="Npassword"  ><br>
 
-            <input class="botons" type="submit" value="Ingresar" name='btningresar' >       
+            <input class="botons" type="submit" value="Ingresar" name='btningresar' >
+            
+    
         
         </section>
     </form>

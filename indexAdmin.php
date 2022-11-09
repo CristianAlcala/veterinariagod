@@ -2,9 +2,8 @@
 session_start();
 if (empty($_SESSION["id"])){
    header ("location: login.php");
-}
+} 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,21 +20,18 @@ if (empty($_SESSION["id"])){
         </div>
 
         <div class="htitulo">
-            <h1>Veterinaria</h1> 
+            <h1>Veterinaria</h1>
         </div>
     </header>
 
     <nav>
-    <div>
+        <div>
             <?php 
-                echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. "&nbsp;</p>";
+            echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. "&nbsp;</p>";
             ?>
-
-            <a href="mascotabuscar.php">Mascotas</a>
-            <a href="registrarCita.php">Registrar cita</a>
-            <a href="Historial_Mascotas.php">Historial Mascotas</a>
-            <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
-
+                <a href="registrarVeterinarios.php">Registrar Veterinarios</a>
+                <a href="eliminarClientes.php">Eliminar Usuarios</a>
+                <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
         </div>
     </nav>
 
@@ -44,7 +40,7 @@ if (empty($_SESSION["id"])){
         <img src="img/imagen.jpg" alt="" style="border: 10px;"><br>
         <br>
         <h1>Descripción</h1>
-        <p>En esta veterinaria estamos comprometidos con tus mascotas, utiliza nuestro sistema para llevar control sobre tus citas, mascotas y clientes.</p>
+        En esta veterinaria estamos comprometidos con tus mascotas, utiliza nuestro sistema para llevar control sobre tus citas, mascotas y clientes.
 
     </section>
 
