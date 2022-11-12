@@ -3,6 +3,8 @@ session_start();
 if (empty($_SESSION["id"])){
    header ("location: login.php");
 }
+
+$idd = $_SESSION["id"];
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +31,6 @@ if (empty($_SESSION["id"])){
     <nav>
         <div class="barra">
 
-                <a href="registrarCliente.php">Registrar cliente</a>
-                <a href="InformacionCitas.php">Citas</a>
                 <a href= "index.php">Regresar inicio</a>
         </div>     
             <form method="POST" action="Historial_MascotasVet.php">
@@ -53,6 +53,7 @@ if (empty($_SESSION["id"])){
             <td><b>FECHA</b></td>
             <td><b>HORA</b></td>
             <td><b>CLAVE CITA</b></td>
+            <td>Editar</td>
 
         </tr>
 
@@ -60,20 +61,22 @@ if (empty($_SESSION["id"])){
            if(isset($_POST['buscarm'])){
             $nm = $_POST['buscarm'];
             
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.CLAVE_CITA
-             FROM cita INNER JOIN mascota ON cita.ID_MASCOTA = mascota.ID_MASCOTA WHERE mascota.NOMBRE LIKE '". $nm ."%'";
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
+             FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE cita.MATRICULA = '$idd' AND mascota.NOMBRE LIKE '". $nm ."%'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array($consultar)){
         ?>
 
         <tr>
+          
             <td><?php echo $row['NOMBRE']?></td>
             <td><?php echo $row['ESPECIE']?></td>
             <td><?php echo $row['RAZA']?></td>
             <td><?php echo $row['DESCRIPCION']?></td>
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
-            <td><?php echo $row['CLAVE_CITA']?></td> 
+            <td><?php echo $row['ID_CITA']?></td> 
+            <td><html><form action="citaDetalle.php"><input class="botons" type="submit"></form></html></td>
         </tr>
         <?php
             }

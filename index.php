@@ -29,8 +29,7 @@ if (empty($_SESSION["id"])){
             <?php 
             echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. "&nbsp;</p>";
             ?>
-                <a href="InformacionCitas.php">Citas</a>
-                <a href="Historial_MascotasVet.php">Historial Mascotas</a>
+                <a href="Historial_MascotasVet.php">Mis Citas</a>
                 <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
         </div>
     </nav>

@@ -33,19 +33,19 @@
         <section class="form-registrar2">
             <h4>Registrar Cita </h4>     
 
-            <label for="ID_VETERINARIO">Selecciona un veterinario: </label>
-            <select class="controls" id="ID_VETERINARIO" name="ID_VETERINARIO" required>
+            <label for="vet">Selecciona un veterinario: </label>
+            <select class="controls" id="vet" name="vet" required>
             <option disabled selected>Selecciona una opción</option>
                 <?php
                     include "conexion.php";
                     
-                    $consulta = 'SELECT ROL, SUBROL, NOMBRE from USUARIOS WHERE TIPO = 1';
+                    $consulta = 'SELECT ID_USUARIOS, SUBROL, NOMBRE from USUARIOS WHERE TIPO = 1';
                     $consultar = mysqli_query($conn, $consulta);
                     
                     
                     while($row = mysqli_fetch_array($consultar))
                     {
-                        $mat= $row['ID_USUARIO'];
+                        $mat=$row['ID_USUARIOS'];
                         $esp=$row['SUBROL'];
                         $nom=$row['NOMBRE'];
                     ?> 

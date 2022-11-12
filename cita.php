@@ -39,8 +39,8 @@ $mas = $_POST['mascota'];
 $fc = $_POST['fechaCita'];
 $hr = $_POST['horacita'];
 $desc = $_POST['desc'];
-$idv = $_POST['ID_VETERINARIO'];
-
+$idv = $_POST['vet'];
+//$idv = 7;
 echo $idv;
 
 

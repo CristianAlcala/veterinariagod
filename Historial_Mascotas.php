@@ -55,6 +55,7 @@
             <td><b>FECHA</b></td>
             <td><b>HORA</b></td>
             <td><b>CLAVE CITA</b></td>
+            
 
         </tr>
 
@@ -63,7 +64,7 @@
             $nm = $_POST['buscarm'];
             
             $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
-            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE ID_USUARIO = 1 AND mascota.NOMBRE LIKE '". $nm ."%'";
+            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE ID_USUARIO = '$idd' AND mascota.NOMBRE LIKE '". $nm ."%'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array($consultar)){
         ?>
@@ -75,7 +76,8 @@
             <td><?php echo $row['DESCRIPCION']?></td>
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
-            <td><?php echo $row['CLAVE_CITA']?></td> 
+            <td><?php echo $row['ID_CITA']?></td> 
+            
         </tr>
         <?php
             }
