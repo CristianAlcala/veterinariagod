@@ -66,7 +66,7 @@ if (empty($_SESSION["id"])){
             $consulta = 'SELECT ID_USUARIO, NOMBRE from usuario';
             $consultar = mysqli_query($conn, $consulta);
             
-            while($row = mysqli_fetch_array($consultar))
+            while($row = mysqli_fetch_array(/** @scrutinizer ignore-call */ $consultar))
             {
                 $matu= $row['ID_USUARIO'];
                 $nomu=$row['NOMBRE'];

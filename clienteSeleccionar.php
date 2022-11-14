@@ -23,7 +23,7 @@ $dbname = "veterinaria";
 $iduser = $_POST['idCliente'];
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = /** @scrutinizer ignore-call */ mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Conexion fallida: " . mysqli_connect_error());
@@ -32,9 +32,9 @@ if (!$conn) {
 $sql = "SELECT ID_USUARIO, CORREO, TELEFONO, NOMBRE FROM usuario WHERE ID_USUARIO = $iduser";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows(/** @scrutinizer ignore-type */ $result) > 0) {
   // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
+  while($row = mysqli_fetch_assoc(/** @scrutinizer ignore-type */ $result)) {
     $corr = $row["CORREO"];
     $tel = $row["TELEFONO"];
     $nom = $row["NOMBRE"];

@@ -16,7 +16,7 @@ $dbname = "vet_v3";
 $mas = $_POST['ID_MASCOTA'];
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = /** @scrutinizer ignore-call */ mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Conexion fallida: " . mysqli_connect_error());
@@ -25,9 +25,9 @@ if (!$conn) {
 $sql = "SELECT ID_MASCOTA, NOMBRE, ESPECIE, RAZA, FECHA_NACIMIENTO FROM mascota WHERE ID_MASCOTA = $mas";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows(/** @scrutinizer ignore-type */ $result) > 0) {
   // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
+  while($row = mysqli_fetch_assoc(/** @scrutinizer ignore-type */ $result)) {
     $nom = $row["NOMBRE"];
     $esp = $row["ESPECIE"];
     $raz = $row["RAZA"];

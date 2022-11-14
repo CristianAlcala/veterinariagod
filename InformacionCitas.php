@@ -59,7 +59,7 @@ if (empty($_SESSION["id"])){
             where  cita.FECHA > CURRENT_DATE
             order by FECHA DESC LIMIT 25";
             $consultar = mysqli_query($conn, $consulta);
-            while($row = mysqli_fetch_array($consultar)){
+            while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar)){
         ?>
 
         <tr>

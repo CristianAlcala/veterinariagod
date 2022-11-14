@@ -64,7 +64,7 @@ $idd = $_SESSION["id"];
             $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
              FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE cita.MATRICULA = '$idd' AND mascota.NOMBRE LIKE '". $nm ."%'";
             $consultar = mysqli_query($conn, $consulta);
-            while($row = mysqli_fetch_array($consultar)){
+            while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar)){
         ?>
 
         <tr>

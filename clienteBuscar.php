@@ -46,7 +46,7 @@ if (empty($_SESSION["id"])){
             $consulta = 'SELECT ID_USUARIO, NOMBRE from usuario';
             $consultar = mysqli_query($conn, $consulta);
             
-            while($row = mysqli_fetch_array($consultar))
+            while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar))
             {
                 $mat= $row['ID_USUARIO'];
                 $nom=$row['NOMBRE'];

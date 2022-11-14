@@ -52,7 +52,7 @@
             $consulta = "SELECT ID_MASCOTA, NOMBRE from mascota where ID_DUEÑO = '$idd' ";
             $consultar = mysqli_query($conn, $consulta);
             
-            while($row = mysqli_fetch_array($consultar))
+            while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar))
             {
                 $mat= $row['ID_MASCOTA'];
                 $nom=$row['NOMBRE'];
