@@ -27,10 +27,7 @@
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "vet_v3";
+include "conexion.php";
 
 $nom = $_POST['nombre'];
 $cc = $_POST['correo'];

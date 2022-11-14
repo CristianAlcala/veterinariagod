@@ -30,10 +30,7 @@
     </nav>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "vet_v3";
+ include "conexion.php";
 
 $mas = $_POST['mascota'];
 $fc = $_POST['fechaCita'];

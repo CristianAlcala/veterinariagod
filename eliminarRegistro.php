@@ -31,7 +31,10 @@ if (empty($_SESSION["id"])){
         </div>
     </nav>
 <?php
-include "conexion.php";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "vet_v3";
 $matricu=$_POST["seleccion"];
 
 

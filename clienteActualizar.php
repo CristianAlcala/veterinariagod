@@ -32,10 +32,7 @@ if (empty($_SESSION["id"])){
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "veterinaria";
+include "conexion.php";
     
 $iduser = $_POST['iduser'];
 $nom = $_POST['Nnombre'];

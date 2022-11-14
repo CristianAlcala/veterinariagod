@@ -9,6 +9,7 @@
 </head>
 
 <body>
+ 
     <header>
         <div class="himagen">
             <img src="img/logo.png" alt="Logo Veterinaria">
@@ -27,10 +28,7 @@
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "vet_v3";
+include "conexion.php";
     
 $idmas = $_POST['idmas'];
 $nom = $_POST['nomMascota'];
