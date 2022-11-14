@@ -37,7 +37,7 @@ $est = $_POST['estado'];
 $fec = $_POST['FechaNacimiento'];
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = /** @scrutinizer ignore-call */ mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Conexion fallida: " . mysqli_connect_error());
