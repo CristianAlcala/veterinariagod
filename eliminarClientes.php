@@ -54,7 +54,7 @@
 
             <label for="seleccion">Selecciona un Usuario: </label>
             <select class="controls" id="seleccion" name="seleccion" required>
-            <option disabled selected>Selecciona una opción</option>
+            <option disabled selected readonly>Selecciona una opción</option>
                 <?php
                     include "conexion.php";
                     
@@ -78,7 +78,7 @@
 
             </select>
 
-            <input class="botons" type="submit" value="Registrar Cita" onclick="return ConfirmDelete()">       
+            <input class="botons" type="submit" value="Eliminar" onclick="return ConfirmDelete()">       
         
         </section>
     </form>
