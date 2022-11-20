@@ -9,7 +9,7 @@
 <script type="text/javascript">
     function ConfirmDelete()
     {
-      var respuesta = confirm("¿Estás seguro que deseas eliminar al usuario?");
+      var respuesta = confirm("¿Estás seguro que deseas eliminar la cita?");
 
       if(respuesta == true)
       {
@@ -48,29 +48,29 @@
         </div>
     </nav>
 
-    <form action="eliminarRegistro.php" method="POST">
+    <form action="eliminarCita.php" method="POST">
         <section class="form-registrar2">
-            <h4>Eliminar Usuarios</h4>     
+            <h4>Eliminar Cita</h4>     
 
-            <label for="seleccion">Selecciona un Usuario: </label>
+            <label for="seleccion">Selecciona una cita: </label>
             <select class="controls" id="seleccion" name="seleccion" required>
             <option disabled selected>Selecciona una opción</option>
                 <?php
                     include "conexion.php";
                     
-                    $consulta = 'SELECT ID_USUARIOS, ROL, SUBROL, NOMBRE from USUARIOS where NOT TIPO = 0';
+                    $consulta = 'SELECT c.id_cita, c.fecha, c.ID_USUARIO,c.MASCOTA_ID_MASCOTA, u.USUARIO, m.NOMBRE
+                    FROM cita C, usuarios U, mascota M WHERE U.ID_USUARIOS=C.ID_USUARIO and m.ID_MASCOTA=C.MASCOTA_ID_MASCOTA;';
                     $consultar = mysqli_query($conn, $consulta);
-                    
                     
                     while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar))
                     {
-                        $mat= $row['ID_USUARIOS'];
-                        $esp=$row['SUBROL'];
-                        $nom=$row['NOMBRE'];
-                        $id=$row['ID_USUARIOS'];
+                        $idCita= $row['id_cita'];
+                        $fecha=$row['fecha'];
+                        $nombreUsuario=$row['USUARIO'];
+                        $nombreMascota=$row['NOMBRE'];
                     ?> 
                 
-                <option value="<?php echo $mat; ?>"><?php echo $id." - ".$nom." - ".$esp; ?></option>  
+                <option value="<?php echo $idCita; ?>"><?php echo $fecha." - ".$nombreUsuario." - ".$nombreMascota; ?></option>  
                 <?php           
                 }
                 
@@ -78,7 +78,7 @@
 
             </select>
 
-            <input class="botons" type="submit" value="Eliminar usuario" onclick="return ConfirmDelete()">       
+            <input class="botons" type="submit" value="Cancelar Cita" onclick="return ConfirmDelete()">       
         
         </section>
     </form>
