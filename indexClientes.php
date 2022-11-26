@@ -33,6 +33,7 @@ if (empty($_SESSION["id"])){
 
             <a href="mascotabuscar.php">Mascotas</a>
             <a href="registrarCita.php">Registrar cita</a>
+            <a href="consultarVoluntarios.php">Veterinarios voluntarios</a>
             <a href="Historial_Mascotas.php">Historial Mascotas</a>
             <a href="consultarCita.php">Consultar Cita</a>
             <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>

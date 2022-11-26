@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>Consultar cita</title>
+    <title>Veterinarios Voluntarios</title>
 </head>
 
 <body>
@@ -42,34 +42,26 @@
     ?>
     <table class="controls" border="1" >
         <tr>
-            <td><b>NOMBRE MASCOTA</b></td>
-            <td><b>ESPECIE</b></td>
-            <td><b>RAZA</b></td>
-            <td><b>DESCRIPCION</b></td>
-            <td><b>FECHA</b></td>
-            <td><b>HORA</b></td>
-            <td><b>CLAVE CITA</b></td>
-            
-
+            <td><b>ID Veterinario Voluntario</b></td>
+            <td><b>NOMBRE</b></td>
+            <td><b>CORREO</b></td>
+            <td><b>SUBROL</b></td>
+            <td><b>TEL</b></td>
         </tr>
 
         <?php
                
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
-            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE ID_USUARIO = '$idd'";
+            $consulta = "SELECT id_voluntario, nombre, correo, subrol, tel FROM voluntarios";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar)){
         ?>
 
         <tr>
-            <td><?php echo $row['NOMBRE']?></td>
-            <td><?php echo $row['ESPECIE']?></td>
-            <td><?php echo $row['RAZA']?></td>
-            <td><?php echo $row['DESCRIPCION']?></td>
-            <td><?php echo $row['FECHA']?></td>
-            <td><?php echo $row['HORA']?></td>
-            <td><?php echo $row['ID_CITA']?></td> 
-            <td><html><form action="citaDetalle.php"><input class="botons" value="Consultar" type="submit"></form></html></td>
+            <td><?php echo $row['id_voluntario']?></td>
+            <td><?php echo $row['nombre']?></td>
+            <td><?php echo $row['correo']?></td>
+            <td><?php echo $row['subrol']?></td>
+            <td><?php echo $row['tel']?></td>
         </tr>
         <?php
             }

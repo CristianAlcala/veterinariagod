@@ -58,14 +58,14 @@ VALUES ('$nom', '$user', '$pass', '$cc', '1' ,'Veterinario', '$esp')";
 echo "<section class='form-registrar'>";
 
 if (mysqli_query($conn, $sql)) {
-  echo "<h2>¡Cliente registrado satisfactoriamente!</h2>";
+  echo "<h2>¡Veterinario registrado satisfactoriamente!</h2>";
 } else {
   echo "<h2>Error: </h2>" . $sql . "<br>" . mysqli_error($conn);
 }
 
-echo "<br><b>Nombre del cliente: </b>" . $nom ."<br>";
-echo "<b>Correo del cliente: </b>". $cc ."<br>";
-echo "<br><b>Usuario del cliente: </b>" . $user ."<br>";
+echo "<br><b>Nombre del veterinario: </b>" . $nom ."<br>";
+echo "<b>Correo del veterinario: </b>". $cc ."<br>";
+echo "<br><b>Usuario del veterinario: </b>" . $user ."<br>";
 echo "<br><b>Rol Asignado: </b>" . "Veterinario - $esp" ."<br>";
 
 
