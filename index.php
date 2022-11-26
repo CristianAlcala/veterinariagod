@@ -30,6 +30,7 @@ if (empty($_SESSION["id"])){
             echo "<p style='color:white; font-weight: bold; display:inline;'>". $_SESSION["nombre"]. "&nbsp;</p>";
             ?>
                 <a href="Historial_MascotasVet.php">Mis Citas</a>
+                <a href="diagnosticarMascota.php">Diagnosticar Mascota</a>
                 <a href="controlador/controlador_cerrar_session.php">Cerrar Sesión</a>
         </div>
     </nav>
