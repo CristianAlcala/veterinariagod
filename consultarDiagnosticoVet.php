@@ -30,12 +30,10 @@ $idd = $_SESSION["id"];
 
     <nav>
         <div class="barra">
-
+                <a href= "Historial_MascotasVet.php">Regresar a Citas</a>
                 <a href= "index.php">Regresar inicio</a>
-                <a href= "consultarDiagnosticoVet.php">Consultar Diagnosticos</a>
-
         </div>     
-            <form method="POST" action="Historial_MascotasVet.php">
+            <form method="POST" action="consultarDiagnosticoVet.php">
                 <input type="text"
                     placeholder="Nombre de la mascota"
                     name="buscarm" id="buscarm">
@@ -55,7 +53,7 @@ $idd = $_SESSION["id"];
             <td><b>FECHA</b></td>
             <td><b>HORA</b></td>
             <td><b>CLAVE CITA</b></td>
-           
+            <td><b>Diagnostico</b></td>
 
             
 
@@ -65,7 +63,7 @@ $idd = $_SESSION["id"];
            if(isset($_POST['buscarm'])){
             $nm = $_POST['buscarm'];
             
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA, diagnostico.descripcion
              FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA
              INNER JOIN diagnostico on cita.ID_CITA = diagnostico.id_cita
               WHERE cita.MATRICULA = '$idd' AND mascota.NOMBRE LIKE '". $nm ."%'";
@@ -82,7 +80,7 @@ $idd = $_SESSION["id"];
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
             <td><?php echo $row['ID_CITA']?></td> 
-          
+            <td><?php echo $row['descripcion']?></td> 
 
         </tr>
         <?php

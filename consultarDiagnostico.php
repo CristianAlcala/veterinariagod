@@ -1,10 +1,7 @@
 <?php
-session_start();
-if (empty($_SESSION["id"])){
-   header ("location: login.php");
-}
-
-$idd = $_SESSION["id"];
+    include "modelo/conexionLogin.php";
+    include "controlador/controlador_login.php";
+    $idd =  $_SESSION["id"];
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +10,7 @@ $idd = $_SESSION["id"];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <title>Historial mascotas</title>
+    <title>Consultar cita</title>
 </head>
 
 <body>
@@ -30,17 +27,14 @@ $idd = $_SESSION["id"];
 
     <nav>
         <div class="barra">
-
-                <a href= "index.php">Regresar inicio</a>
-                <a href= "consultarDiagnosticoVet.php">Consultar Diagnosticos</a>
-
+           
+            <a href="mascotabuscar.php">Mascotas</a>
+            <a href="consultarCita.php">Volver a Citas</a>
+            <a href= "indexClientes.php">Regresar inicio</a>
+           
+            
         </div>     
-            <form method="POST" action="Historial_MascotasVet.php">
-                <input type="text"
-                    placeholder="Nombre de la mascota"
-                    name="buscarm" id="buscarm">
-                <input type="submit" value="Buscar">
-            </form>
+
     </nav>
 
     <?php 
@@ -55,26 +49,22 @@ $idd = $_SESSION["id"];
             <td><b>FECHA</b></td>
             <td><b>HORA</b></td>
             <td><b>CLAVE CITA</b></td>
-           
+            <td><b>Diagnostico</b></td>
 
-            
 
         </tr>
 
         <?php
-           if(isset($_POST['buscarm'])){
-            $nm = $_POST['buscarm'];
-            
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
-             FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA
-             INNER JOIN diagnostico on cita.ID_CITA = diagnostico.id_cita
-              WHERE cita.MATRICULA = '$idd' AND mascota.NOMBRE LIKE '". $nm ."%'";
+               
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA, diagnostico.descripcion
+            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA 
+            INNER JOIN diagnostico on cita.ID_CITA = diagnostico.id_cita
+             WHERE ID_USUARIO = '$idd'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar)){
         ?>
 
         <tr>
-          
             <td><?php echo $row['NOMBRE']?></td>
             <td><?php echo $row['ESPECIE']?></td>
             <td><?php echo $row['RAZA']?></td>
@@ -82,12 +72,15 @@ $idd = $_SESSION["id"];
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
             <td><?php echo $row['ID_CITA']?></td> 
-          
+            <td><?php echo $row['descripcion']?></td> 
 
+             
+
+    
         </tr>
         <?php
             }
-        }
+        
     
         ?>        
     </table>

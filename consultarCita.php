@@ -30,7 +30,9 @@
            
             <a href="mascotabuscar.php">Mascotas</a>
             <a href="registrarCita.php">Registrar cita</a>
+            <a href= "consultarDiagnostico.php">Consultar Diagnosticos</a>
             <a href= "indexClientes.php">Regresar inicio</a>
+
            
             
         </div>     
@@ -51,12 +53,15 @@
             <td><b>CLAVE CITA</b></td>
             
 
+
         </tr>
 
         <?php
                
-            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA
-            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA WHERE ID_USUARIO = '$idd'";
+            $consulta = "SELECT mascota.NOMBRE, mascota.ESPECIE, mascota.RAZA, cita.DESCRIPCION, cita.FECHA, cita.HORA, cita.ID_CITA, diagnostico.descripcion
+            FROM cita INNER JOIN mascota ON cita.MASCOTA_ID_MASCOTA = mascota.ID_MASCOTA 
+            INNER JOIN diagnostico on cita.ID_CITA = diagnostico.id_cita
+             WHERE ID_USUARIO = '$idd'";
             $consultar = mysqli_query($conn, $consulta);
             while($row = mysqli_fetch_array(/** @scrutinizer ignore-type */ $consultar)){
         ?>
@@ -69,7 +74,11 @@
             <td><?php echo $row['FECHA']?></td>
             <td><?php echo $row['HORA']?></td>
             <td><?php echo $row['ID_CITA']?></td> 
-            <td><html><form action="citaDetalle.php"><input class="botons" value="Consultar" type="submit"></form></html></td>
+             
+
+             
+
+    
         </tr>
         <?php
             }
